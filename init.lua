@@ -198,6 +198,8 @@ vim.keymap.set('n', '<C-s>', ':w<CR>', { desc = 'Save current file', noremap = t
 vim.keymap.set('i', '<S-Enter>', '<Esc>o', { desc = 'insert empty line below and move cursor on it', noremap = true, silent = true })
 vim.keymap.set('i', '<C-Enter>', '<Esc>O', { desc = 'insert empty line above and move cursor on it', noremap = true, silent = true })
 vim.keymap.set('n', '<C-d>', 'yyp', { noremap = true, silent = true })
+vim.keymap.set('v', '<C-d>', 'y`>p`[v`]', { noremap = true, silent = true })
+
 --
 --
 --
