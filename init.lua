@@ -190,9 +190,7 @@ vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right win
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
--- TODO: Save file, format file, optimize imports, duplicate selected text (or line if nothing selected)
--- TODO: delete word in edit mode
--- norremap <C-s> :w<CR>
+-- Trying to copy shortcuts from my JetBrains IDEA config
 vim.keymap.set('i', '<C-s>', '<C-O>:w<CR>', { desc = 'Save current file', noremap = true, silent = true })
 vim.keymap.set('n', '<C-s>', ':w<CR>', { desc = 'Save current file', noremap = true, silent = true })
 vim.keymap.set('i', '<S-Enter>', '<Esc>o', { desc = 'insert empty line below and move cursor on it', noremap = true, silent = true })
@@ -506,6 +504,10 @@ require('lazy').setup({
           -- Execute a code action, usually your cursor needs to be on top of an error
           -- or a suggestion from your LSP for this to activate.
           map('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
+          map('<C-Enter>', vim.lsp.buf.code_action, '[C]ode [A]ction')
+
+          -- Autoformat file
+          map('<A-C-l>', vim.lsp.buf.format, 'Format file')
 
           -- Opens a popup that displays documentation about the word under your cursor
           --  See `:help K` for why this keymap.
