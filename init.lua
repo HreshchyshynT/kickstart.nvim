@@ -118,6 +118,13 @@ vim.opt.clipboard = 'unnamedplus'
 -- Enable break indent
 vim.opt.breakindent = true
 
+-- Default indent settings
+vim.opt.shiftwidth = 2 -- Use 2 spaces for auto-indents
+vim.opt.tabstop = 2 -- Set tab width to 2 spaces
+vim.opt.softtabstop = 2 -- Tab key indents by 2 spaces
+vim.opt.expandtab = true -- Convert tabs to spaces
+vim.opt.smartindent = true -- Enable smart indent
+
 -- Save undo history
 vim.opt.undofile = true
 
