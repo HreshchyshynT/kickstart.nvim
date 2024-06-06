@@ -205,6 +205,9 @@ vim.keymap.set('i', '<C-Enter>', '<Esc>O', { desc = 'insert empty line above and
 vim.keymap.set('n', '<C-d>', 'yyp', { noremap = true, silent = true })
 vim.keymap.set('v', '<C-d>', 'y`>p`[v`]', { noremap = true, silent = true })
 
+-- center cursor after scrolling forward/backward
+vim.keymap.set('n', '<C-f>', '<C-f>zz', { noremap = true })
+vim.keymap.set('n', '<C-b>', '<C-b>zz', { noremap = true })
 --
 --
 --
