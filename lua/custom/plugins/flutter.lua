@@ -5,6 +5,7 @@ return {
     'nvim-lua/plenary.nvim',
   },
   config = function()
+    require('flutter-tools').setup {}
     local telescope = require 'telescope'
     telescope.load_extension 'flutter'
     -- telescope.extensions.flutter.commands()

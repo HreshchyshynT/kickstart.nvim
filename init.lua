@@ -520,7 +520,6 @@ require('lazy').setup({
           -- Execute a code action, usually your cursor needs to be on top of an error
           -- or a suggestion from your LSP for this to activate.
           map('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
-          map('<C-Enter>', vim.lsp.buf.code_action, '[C]ode [A]ction')
 
           -- Autoformat file
           map('<A-C-l>', vim.lsp.buf.format, 'Format file')
@@ -758,7 +757,7 @@ require('lazy').setup({
           -- Accept ([y]es) the completion.
           --  This will auto-import if your LSP supports it.
           --  This will expand snippets if the LSP sent a snippet.
-          ['<Enter>'] = cmp.mapping.confirm { select = true },
+          ['<Enter>'] = cmp.mapping.confirm { select = true, behavior = cmp.ConfirmBehavior.Insert },
 
           -- If you prefer more traditional completion keymaps,
           -- you can uncomment the following lines
