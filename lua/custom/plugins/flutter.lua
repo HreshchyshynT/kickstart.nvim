@@ -5,10 +5,14 @@ return {
     'nvim-lua/plenary.nvim',
   },
   config = function()
-    require('flutter-tools').setup {}
+    local flutter = require 'flutter-tools'
+    flutter.setup {}
     local telescope = require 'telescope'
-    telescope.load_extension 'flutter'
     -- telescope.extensions.flutter.commands()
-    vim.keymap.set('n', '<leader>Fc', '<cmd>Telescope flutter commands<cr>', { desc = 'Display available flutter commands', noremap = true })
+
+    vim.keymap.set('n', '<leader>Fc', telescope.extensions.flutter.commands, { desc = 'Display available flutter commands', noremap = true })
+    vim.keymap.set('n', '<leader>Fr', ':FlutterReload<CR>', { desc = 'Flutter hot [r]eload', noremap = true })
+    vim.keymap.set('n', '<leader>FR', ':FlutterRestart<CR>', { desc = 'Flutter hot [R]estart', noremap = true })
+    vim.keymap.set('n', '<leader>Fq', ':FlutterQuit<CR>', { desc = 'Flutter hot [q]uit', noremap = true })
   end,
 }
