@@ -9,6 +9,12 @@ return {
     flutter.setup {}
     local telescope = require 'telescope'
     -- telescope.extensions.flutter.commands()
+    --
+    local whichKey = require 'which-key'
+
+    whichKey.register {
+      ['<leader>F'] = { name = '[F]lutter', _ = 'which_key_ignore' },
+    }
 
     vim.keymap.set('n', '<leader>Fc', telescope.extensions.flutter.commands, { desc = 'Display available flutter commands', noremap = true })
     vim.keymap.set('n', '<leader>Fr', ':FlutterReload<CR>', { desc = 'Flutter hot [r]eload', noremap = true })
