@@ -6,7 +6,9 @@ return {
   },
   config = function()
     local flutter = require 'flutter-tools'
-    flutter.setup {}
+    flutter.setup {
+      fvm = true,
+    }
     local telescope = require 'telescope'
     -- telescope.extensions.flutter.commands()
     --
